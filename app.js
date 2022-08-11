@@ -20,3 +20,24 @@ let gridSize = 16;
 
 colorPicker.value = '#0a212b';
 gridSlider.value = 16;
+
+// Functions
+// initialize grid
+function initializeGrid(size) {
+  grid.style.gridTemplateColumns = `repreat(${size}, 1fr)`;
+  grid.style.gridTemplateRows = `repreat(${size}, 1fr)`;
+  grid.style.backgroundColor = currentBackground;
+  for (let i = 0; i < (size * size); i++) {
+    const gridUnit = document.createElement('div');
+    gridUnit.classList.add('grid-unit');
+    gridUnit.addEventListener('mouseover', paint);
+    gridUnit.addEventListener('mousedown', paint);
+    grid.appendChild(gridUnit);
+  }
+}
+
+function paint(e) {
+  console.log('paint');
+}
+
+window.onload = () => initializeGrid(gridSize);
