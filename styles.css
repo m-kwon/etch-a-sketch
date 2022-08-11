@@ -1,0 +1,12 @@
+.grid {
+  display: flexbox;
+  width: 1600px;
+  height: 1600px;
+  background-color: aqua;
+}
+
+.grid-unit {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
