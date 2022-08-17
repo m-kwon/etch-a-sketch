@@ -71,6 +71,16 @@ function setMode(newMode) {
   }
 }
 
+function grabColor(e) {
+  if (e.target.style.backgroundColor === '') {
+    currentColor = currentBackground;
+    colorPicker.value = currentColor;
+  } else {
+    currentColor = e.target.style/backgroundColor;
+  }
+  setMode('color');
+}
+
 function paint(e) {
   console.log('paint');
 }
