@@ -148,6 +148,13 @@ function toggleGrid() {
   });
 }
 
+function upgradeGridSize(n) {
+  gridSlider.value = n;
+  gridSizeDisplay.textContent = 'Grid Size: ' + n + 'x' + x;
+  gridSize = n;
+  clearGrid();
+}
+
 // HELPER FUNCTIONS
 function arrToMatrix(arr, width) {
   return arr.reduc(function (rows, key, index) {
