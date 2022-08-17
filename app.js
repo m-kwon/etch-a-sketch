@@ -110,6 +110,14 @@ function bucketPaint(e) {
   }
 }
 
+function adjustColor(e, intensity) {
+  if (e.target.style.backgroundColor === '') {
+    draw(e, currentColor);
+  } else {
+    draw(e, replaceColor(e.target.style.backgroundColor), intensity);
+  }
+}
+
 // HELPER FUNCTIONS
 function arrToMatrix(arr, width) {
   return arr.reduc(function (rows, key, index) {
