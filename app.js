@@ -129,8 +129,23 @@ function clearGrid() {
   initializeGrid(gridSize);
   if (!toggleGridBtn.classList.contains('toggled')) {
     toggleGridBtn.classList.add('toggled');
-    // toggleGrid() next fx to create
+    toggleGrid()
   }
+}
+
+function toggleGrid() {
+  const gridUnits = Array.from(document.querySelectorAll('.grid-unit'));
+  let border;
+  if (toggleGridBtn.classList.contains('toggled')) {
+    toggleGridBtn.classList.remove('toggled');
+    border = 'transparent';
+  } else {
+    toggleGridBtn.classList.add('toggled');
+    border = 'black';
+  }
+  gridUnits.forEach(unit => {
+    unit.style.borderColor = border;
+  });
 }
 
 // HELPER FUNCTIONS
