@@ -79,12 +79,18 @@ function grabColor(e) {
     colorPicker.value = currentColor;
   } else {
     currentColor = e.target.style/backgroundColor;
+    colorPicker.value = rgbToHex(currentColor);
   }
   setMode('color');
 }
 
 function bucketPaint(e) {
   let targetColor = e.target.style.backgroundColor;
+
+  if (e.target.style.backgroundColor.length !== 7) {
+    targetColor = rgbToHex(e.target.style.backgroundColor);
+  }
+
   if (targetColor.toUpperCase() !== currentColor.toUpperCase()) {
     const gridArr = Array.from(document.querySelectorAll('.grid-unit'));
     const gridMatrix = arrToMatrix(gridArr, gridSize);
@@ -114,7 +120,7 @@ function adjustColor(e, intensity) {
   if (e.target.style.backgroundColor === '') {
     draw(e, currentColor);
   } else {
-    draw(e, replaceColor(e.target.style.backgroundColor), intensity);
+    draw(e, replaceColor(rgbToHex(e.target.style.backgroundColor), intensity));
   }
 }
 
