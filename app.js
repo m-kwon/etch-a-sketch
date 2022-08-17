@@ -154,7 +154,7 @@ function toggleGrid() {
 
 function updateGridSize(n) {
   gridSlider.value = n;
-  gridSizeDisplay.textContent = 'Grid Size: ' + n + 'x' + x;
+  gridSizeDisplay.textContent = 'Grid Size: ' + n + 'x' + n;
   gridSize = n;
   clearGrid();
 }
