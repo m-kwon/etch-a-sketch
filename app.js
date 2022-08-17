@@ -44,7 +44,7 @@ function initializeGrid(size) {
 }
 
 function toggleMode(newMode) {
-  .classList.remove('toggled');
+  colorGrabBtn.classList.remove('toggled');
   paintBucketBtn.classList.remove('toggled');
   rainbowBtn.classList.remove('toggled');
   shadingBtn.classList.remove('toggled');
@@ -54,7 +54,7 @@ function toggleMode(newMode) {
   if (newMode === currentMode) return;
 
   if (newMode === 'grab') {
-      .classList.add('toggled');
+      colorGrabBtn.classList.add('toggled');
   } else if (newMode === 'bucket') {
       paintBucketBtn.classList.add('toggled');
   } else if (newMode === 'rainbow') {
@@ -152,7 +152,7 @@ function toggleGrid() {
   });
 }
 
-function upgradeGridSize(n) {
+function updateGridSize(n) {
   gridSlider.value = n;
   gridSizeDisplay.textContent = 'Grid Size: ' + n + 'x' + x;
   gridSize = n;
