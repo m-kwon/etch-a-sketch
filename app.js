@@ -1,4 +1,3 @@
-// Access DOM elements in HTML template
 const colorPicker = document.getElementById('color-select');
 const colorGrabBtn = document.getElementById('color-grab');
 const paintBucketBtn = document.getElementById('color-bucket');
@@ -21,7 +20,7 @@ let gridSize = 16;
 colorPicker.value = '#0a212b';
 gridSlider.value = 16;
 
-// Functions
+// FUNCTIONS
 // initialize grid
 function initializeGrid(size) {
   grid.style.gridTemplateColumns = `repreat(${size}, 1fr)`;
@@ -36,6 +35,10 @@ function initializeGrid(size) {
   }
 }
 
+// change color
+const setColor = newColor => currentColor = newColor;
+
+// paint
 function paint(e) {
   console.log('paint');
 }
