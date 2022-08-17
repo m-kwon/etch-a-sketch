@@ -85,11 +85,26 @@ function bucketPaint(e) {
   let targetColor = e.target.style.backgroundColor;
   if (targetColor.toUpperCase() !== currentColor.toUpperCase()) {
     const gridArr = Array.from(document.querySelectorAll('.grid-unit'));
-    // multidimensional array fill
-    // https://stackoverflow.com/questions/22053759/multidimensional-array-fill
-    // convert array to matrix
-    // variable for x and y positions
-    // need array to matrix helper function
+    const gridMatrix = arrToMatrix(gridArr, gridSize);
+
+    const target = e.target.style.backgroundColor;
+
+    let gridIndex = gridArry.indexOf(e.target);
+    let xCoord = Math.floor(gridIndex / gridSize);
+    let yCoord = gridIndex % gridSize;
+
+    function flow(x, y) {
+      if (x >= 0 && x < gridMatrix.length && y >= 0 && y < gridMatrix[x].length) {
+        if (gridMatrix[x][y].style.backgroundColor === target) {
+          gridMatrix[x][y].style.backgroundColor = currentColor;
+          flow(x - 1, y); // check vertically
+          flow(x + 1, y);
+          flow(x, y - 1); // check horizontally
+          flow(x, y + 1);
+        }
+      }
+    }
+    flow(xCoord, yCoord);
   }
 }
 
