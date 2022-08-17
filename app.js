@@ -125,4 +125,10 @@ function arrToMatrix(arr, width) {
   }, []);
 }
 
+function rgbToHex(rgb) {
+  let separator = rgb.indexOf(',') > -1 ? ',' : ' ';
+  rgb = rgb.substr(4).split(')')[0].split(separator);
+  return ('#' + ((1 << 24) + (+rgb[0] << 16) + (+rgb[1] << 8) + +rgb[2]).toString(16).slice(1));
+}
+
 window.onload = () => initializeGrid(gridSize);
