@@ -38,6 +38,32 @@ function initializeGrid(size) {
 // change color
 const setColor = newColor => currentColor = newColor;
 
+// toggle modes
+function toggleMode(newMode) {
+  colorGrabBtn.classList.remove('toggled');
+  paintBucketBtn.classList.remove('toggled');
+  rainbowBtn.classList.remove('toggled');
+  shadingBtn.classList.remove('toggled');
+  lightingBtn.classList.remove('toggled');
+  eraserBtn.classList.remove('toggled');
+
+  if (newMode === currentMode) return;
+
+  if (newMode === 'grab') {
+      colorGrabBtn.classList.add('toggled');
+  } else if (newMode === 'bucket') {
+      paintBucketBtn.classList.add('toggled');
+  } else if (newMode === 'rainbow') {
+      rainbowBtn.classList.add('toggled');
+  } else if (newMode === 'shading') {
+      shadingBtn.classList.add('toggled');
+  } else if (newMode === 'lighting') {
+      lightingBtn.classList.add('toggled');
+  } else if (newMode === 'eraser') {
+      eraserBtn.classList.add('toggled');
+  }
+}
+
 // paint
 function paint(e) {
   console.log('paint');
