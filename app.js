@@ -17,6 +17,10 @@ let currentMode = 'color';
 let currentBackground = '#ffffff';
 let gridSize = 16;
 
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true)
+document.body.onmouseup = () => (mouseDown = false)
+
 colorPicker.value = '#0a212b';
 gridSlider.value = 16;
 
