@@ -64,6 +64,7 @@ function toggleMode(newMode) {
   }
 }
 
+
 // set mode
 function setMode(newMode) {
   toggleMode(newMode);
@@ -73,6 +74,8 @@ function setMode(newMode) {
     currentMode = newMode;
   }
 }
+
+const draw = (e, color) => e.target.style.backgroundColor = color;
 
 // paint
 function paint(e) {
