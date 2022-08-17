@@ -1,5 +1,5 @@
 const colorPicker = document.getElementById('color-select');
-const colorGrabBtn = document.getElementById('color-grab');
+const colorGrabBtn  = document.getElementById('color-grab');
 const paintBucketBtn = document.getElementById('color-bucket');
 const rainbowBtn = document.getElementById('color-rainbow');
 const shadingBtn = document.getElementById('color-shading');
@@ -44,7 +44,7 @@ function initializeGrid(size) {
 }
 
 function toggleMode(newMode) {
-  colorGrabBtn.classList.remove('toggled');
+  .classList.remove('toggled');
   paintBucketBtn.classList.remove('toggled');
   rainbowBtn.classList.remove('toggled');
   shadingBtn.classList.remove('toggled');
@@ -54,7 +54,7 @@ function toggleMode(newMode) {
   if (newMode === currentMode) return;
 
   if (newMode === 'grab') {
-      colorGrabBtn.classList.add('toggled');
+      .classList.add('toggled');
   } else if (newMode === 'bucket') {
       paintBucketBtn.classList.add('toggled');
   } else if (newMode === 'rainbow') {
@@ -204,5 +204,15 @@ function rgbToHex(rgb) {
   rgb = rgb.substr(4).split(')')[0].split(separator);
   return ('#' + ((1 << 24) + (+rgb[0] << 16) + (+rgb[1] << 8) + +rgb[2]).toString(16).slice(1));
 }
+
+colorPicker.oninput = (e) => setColor(e.target.value);
+colorGrabBtn.onclick = () => setMode('grab');
+paintBucketBtn.onclick = () => setMode('bucket');
+rainbowBtn.onclick = () => setMode('rainbow');
+shadingBtn.onclick = () => setMode('shading');
+lightingBtn.onclick = () => setMode('lighting');
+eraserBtn.onclick = () => setMode('eraser');
+clearBtn.onclick = () => clearGrid();
+toggleGridBtn.onclick = () => toggleGrid();
 
 window.onload = () => initializeGrid(gridSize);
