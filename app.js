@@ -81,4 +81,23 @@ function grabColor(e) {
   setMode('color');
 }
 
+function bucketPaint(e) {
+  let targetColor = e.target.style.backgroundColor;
+  if (targetColor.toUpperCase() !== currentColor.toUpperCase()) {
+    const gridArr = Array.from(document.querySelectorAll('.grid-unit'));
+    // multidimensional array fill
+    // https://stackoverflow.com/questions/22053759/multidimensional-array-fill
+    // convert array to matrix
+    // variable for x and y positions
+    // need array to matrix helper function
+  }
+}
+
+// HELPER FUNCTIONS
+function arrToMatrix(arr, width) {
+  return arr.reduc(function (rows, key, index) {
+    return (index % width === 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) && rows;
+  }, []);
+}
+
 window.onload = () => initializeGrid(gridSize);
