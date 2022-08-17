@@ -81,8 +81,4 @@ function grabColor(e) {
   setMode('color');
 }
 
-function paint(e) {
-  console.log('paint');
-}
-
 window.onload = () => initializeGrid(gridSize);
