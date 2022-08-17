@@ -6,7 +6,7 @@ const shadingBtn = document.getElementById('color-shading');
 const lightingBtn = document.getElementById('color-lighting');
 const eraserBtn = document.getElementById('color-eraser');
 const clearBtn = document.getElementById('color-reset');
-const toggleBtn = document.getElementById('toggle-grid');
+const toggleGridBtn = document.getElementById('toggle-grid');
 const gridSlider = document.getElementById('slider');
 const gridSizeDisplay = document.getElementById('grid-size');
 const grid = document.getElementById('grid');
@@ -121,6 +121,15 @@ function adjustColor(e, intensity) {
     draw(e, currentColor);
   } else {
     draw(e, replaceColor(rgbToHex(e.target.style.backgroundColor), intensity));
+  }
+}
+
+function clearGrid() {
+  grid.textContent = '';
+  initializeGrid(gridSize);
+  if (!toggleGridBtn.classList.contains('toggled')) {
+    toggleGridBtn.classList.add('toggled');
+    // toggleGrid() next fx to create
   }
 }
 
