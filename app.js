@@ -64,6 +64,16 @@ function toggleMode(newMode) {
   }
 }
 
+// set mode
+function setMode(newMode) {
+  toggleMode(newMode);
+  if (currentMode === newMode) {
+    currentMode = 'color';
+  } else {
+    currentMode = newMode;
+  }
+}
+
 // paint
 function paint(e) {
   console.log('paint');
