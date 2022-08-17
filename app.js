@@ -21,7 +21,9 @@ colorPicker.value = '#0a212b';
 gridSlider.value = 16;
 
 // FUNCTIONS
-// initialize grid
+const setColor = newColor => currentColor = newColor;
+const draw = (e, color) => e.target.style.backgroundColor = color;
+
 function initializeGrid(size) {
   grid.style.gridTemplateColumns = `repreat(${size}, 1fr)`;
   grid.style.gridTemplateRows = `repreat(${size}, 1fr)`;
@@ -35,10 +37,6 @@ function initializeGrid(size) {
   }
 }
 
-// change color
-const setColor = newColor => currentColor = newColor;
-
-// toggle modes
 function toggleMode(newMode) {
   colorGrabBtn.classList.remove('toggled');
   paintBucketBtn.classList.remove('toggled');
@@ -64,8 +62,6 @@ function toggleMode(newMode) {
   }
 }
 
-
-// set mode
 function setMode(newMode) {
   toggleMode(newMode);
   if (currentMode === newMode) {
@@ -75,9 +71,6 @@ function setMode(newMode) {
   }
 }
 
-const draw = (e, color) => e.target.style.backgroundColor = color;
-
-// paint
 function paint(e) {
   console.log('paint');
 }
