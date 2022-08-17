@@ -37,8 +37,8 @@ function initializeGrid(size) {
   for (let i = 0; i < (size * size); i++) {
     const gridUnit = document.createElement('div');
     gridUnit.classList.add('grid-unit');
-    gridUnit.addEventListener('mouseover', paint);
-    gridUnit.addEventListener('mousedown', paint);
+    gridUnit.addEventListener('mouseover', router);
+    gridUnit.addEventListener('mousedown', router);
     grid.appendChild(gridUnit);
   }
 }
@@ -157,6 +157,39 @@ function upgradeGridSize(n) {
   gridSizeDisplay.textContent = 'Grid Size: ' + n + 'x' + x;
   gridSize = n;
   clearGrid();
+}
+
+function router(e) {
+  if (e.type === 'mouseover' && !mouseDown) {
+    return;
+  }
+
+  let randomColor = Math.floor(Math.random() * 256);
+  switch (currentMode) {
+    case 'color':
+      draw(e, currentColor);
+      break;
+    case 'grab':
+      grabColor(e);
+      break;
+    case 'bucket':
+      bucketPaint(e);
+      break;
+    case 'rainbow':
+      draw(e, `rgb(${randomColor}, ${randomColor}, ${randomColor})`);
+      break;
+    case 'shading':
+      adjustColor(e, -15);
+      break;
+    case 'lighting':
+      adjustColor(e, 15);
+      break;
+    case 'eraser':
+      draw(e, currentBackground);
+      break;
+    default:
+      throw new Error('Error occurred!');
+  }
 }
 
 // HELPER FUNCTIONS
