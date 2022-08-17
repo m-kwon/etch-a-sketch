@@ -23,6 +23,8 @@ gridSlider.value = 16;
 // FUNCTIONS
 const setColor = newColor => currentColor = newColor;
 const draw = (e, color) => e.target.style.backgroundColor = color;
+// https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
+const replaceColor = (color, intensity) => '#' + color.replace(/^#/, '').replace(/../g, color => ('0' + Math.min(255, Math.max(0, parseInt(color, 16) + intensity)).toString(16)).substr(-2));
 
 function initializeGrid(size) {
   grid.style.gridTemplateColumns = `repreat(${size}, 1fr)`;
