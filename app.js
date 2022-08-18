@@ -31,8 +31,8 @@ const draw = (e, color) => e.target.style.backgroundColor = color;
 const replaceColor = (color, intensity) => '#' + color.replace(/^#/, '').replace(/../g, color => ('0' + Math.min(255, Math.max(0, parseInt(color, 16) + intensity)).toString(16)).substr(-2));
 
 function initializeGrid(size) {
-  grid.style.gridTemplateColumns = `repreat(${size}, 1fr)`;
-  grid.style.gridTemplateRows = `repreat(${size}, 1fr)`;
+  grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   grid.style.backgroundColor = currentBackground;
   for (let i = 0; i < (size * size); i++) {
     const gridUnit = document.createElement('div');
