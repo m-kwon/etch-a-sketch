@@ -137,6 +137,10 @@ input[type="range"]::-webkit-progress-bar {
     border-radius: 10px;
 }
 
+#toggle-grid {
+  background-color: #949494;
+}
+
 #slider {
     -webkit-appearance: none;
     height: 5px;
@@ -170,8 +174,8 @@ input[type="range"]::-webkit-progress-bar {
     cursor: crosshair;
 }
 
-.grid-element {
+.grid-unit {
     box-sizing: border-box;
     background-color: transparent;
-    border: 1px solid black;
+    border: .5px solid #949494;
 }

@@ -145,7 +145,7 @@ function toggleGrid() {
     border = 'transparent';
   } else {
     toggleGridBtn.classList.add('toggled');
-    border = 'black';
+    border = '#949494';
   }
   gridUnits.forEach(unit => {
     unit.style.borderColor = border;
