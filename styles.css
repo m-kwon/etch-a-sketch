@@ -10,8 +10,8 @@ body {
 }
 
 header {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -178,4 +178,16 @@ input[type="range"]::-webkit-progress-bar {
     box-sizing: border-box;
     background-color: transparent;
     border: .5px solid #949494;
+}
+
+footer {
+  height: 30px;
+  width: 100vw;
+  margin-top: 10px;
+  color: #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 14px;
 }
