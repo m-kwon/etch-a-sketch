@@ -1,6 +1,6 @@
 # Etch-a-Sketch
 
-A simple drawing application which merges Etch and Sketch into one.
+A simple drawing application built using native Javascript, HTML, and CSS.
 
 [Live App](https://m-kwon.github.io/etch-a-sketch/)
 
