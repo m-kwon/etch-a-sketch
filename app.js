@@ -164,7 +164,6 @@ function router(e) {
     return;
   }
 
-  let randomColor = Math.floor(Math.random() * 256);
   switch (currentMode) {
     case 'color':
       draw(e, currentColor);
@@ -176,7 +175,7 @@ function router(e) {
       bucketPaint(e);
       break;
     case 'rainbow':
-      draw(e, `rgb(${randomColor}, ${randomColor}, ${randomColor})`);
+      draw(e, `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`);
       break;
     case 'shading':
       adjustColor(e, -15);
