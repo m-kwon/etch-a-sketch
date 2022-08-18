@@ -101,7 +101,7 @@ function bucketPaint(e) {
 
     const target = e.target.style.backgroundColor;
 
-    let gridIndex = gridArry.indexOf(e.target);
+    let gridIndex = gridArr.indexOf(e.target);
     let xCoord = Math.floor(gridIndex / gridSize);
     let yCoord = gridIndex % gridSize;
 
@@ -194,7 +194,7 @@ function router(e) {
 
 // HELPER FUNCTIONS
 function arrToMatrix(arr, width) {
-  return arr.reduc(function (rows, key, index) {
+  return arr.reduce(function (rows, key, index) {
     return (index % width === 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) && rows;
   }, []);
 }
